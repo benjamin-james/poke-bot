@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-import time
 import configure
+import time
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
+
 m_driver = webdriver.PhantomJS()
 
 
@@ -17,7 +17,7 @@ def login(driver=m_driver,
         driver.find_element_by_id('pass').clear()
         password = driver.find_element_by_id('pass')
         password.send_keys(passwd)
-        password.send_keys(Keys.RETURN)
+        password.send_keys(webdriver.common.keys.Keys.RETURN)
 
 
 def check_pokes(driver=m_driver):
