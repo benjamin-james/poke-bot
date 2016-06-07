@@ -1,0 +1,7 @@
+* poke-bot
+A facebook poke bot to win poke wars
+
+Needs Python 3 and the Selenium package,
+also needs PhantomJS to work
+
+
