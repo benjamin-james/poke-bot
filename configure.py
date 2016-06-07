@@ -1,3 +1,3 @@
-
-m_username = 'bob@example.com'
-m_passwd = 'password'
+username = 'bob@example.com'
+passwd = 'password'  # could use getpass.getpass('Enter password:')
+delay = 5.0  # in seconds

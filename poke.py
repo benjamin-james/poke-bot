@@ -3,12 +3,11 @@ import time
 import configure
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
-
 m_driver = webdriver.PhantomJS()
 
 
 def login(driver=m_driver,
-          username=configure.m_username, passwd=configure.m_passwd):
+          username=configure.username, passwd=configure.passwd):
         driver.get('https://www.facebook.com')
 
         driver.find_element_by_id('email').clear()
@@ -26,14 +25,16 @@ def check_pokes(driver=m_driver):
         buttons = driver.find_elements_by_link_text('Poke Back')
         for button in buttons:
                 button.click()
+                print("Poked back")
 
 if __name__ == "__main__":
         try:
                 login()
                 while True:
                         check_pokes()
-                        time.sleep(5)
+                        time.sleep(configure.delay)
         except:
+                print("Error")
                 m_driver = webdriver.PhantomJS()
                 login()
                 pass

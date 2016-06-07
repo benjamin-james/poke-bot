@@ -1,7 +1,5 @@
 * poke-bot
 A facebook poke bot to win poke wars
-
-Needs Python 3 and the Selenium package,
-also needs PhantomJS to work
-
-
+* Dependencies
+Needs [[http://python.org][Python 3]] and the Python 3 library [[https://selenium-python.readthedocs.io][Selenium]],
+along with [[http://phantomjs.org][PhantomJS]] installed
