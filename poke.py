@@ -25,7 +25,8 @@ def check_pokes(driver=m_driver):
         buttons = driver.find_elements_by_link_text('Poke Back')
         for button in buttons:
                 button.click()
-                print("Poked back")
+                driver.get_screenshot_as_png(
+                        time.strftime('%Y-%m-%d-%H%M%S') + '.png')
 
 if __name__ == "__main__":
         try:
