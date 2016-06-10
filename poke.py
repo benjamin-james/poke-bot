@@ -26,7 +26,7 @@ def check_pokes(driver=m_driver):
         for button in buttons:
                 button.click()
                 driver.get_screenshot_as_png(
-                        time.strftime('%Y-%m-%d-%H%M%S') + '.png')
+                        time.strftime('%Y-%m-%d-%H%M%S.png'))
 
 if __name__ == "__main__":
         try:
