@@ -6,6 +6,11 @@ from selenium import webdriver
 m_driver = webdriver.PhantomJS()
 
 
+def screenshot(driver=m_driver):
+        string = str(time.strftime('%Y-%m-%d-%H%M%S.png'))
+        driver.get_screenshot_as_png(string)
+
+
 def login(driver=m_driver,
           username=configure.username, passwd=configure.passwd):
         driver.get('https://www.facebook.com')
@@ -25,17 +30,17 @@ def check_pokes(driver=m_driver):
         buttons = driver.find_elements_by_link_text('Poke Back')
         for button in buttons:
                 button.click()
-                driver.get_screenshot_as_png(
-                        time.strftime('%Y-%m-%d-%H%M%S.png'))
+                screenshot(driver)
 
 if __name__ == "__main__":
         try:
                 login()
+                print("Logging in")
                 while True:
                         check_pokes()
                         time.sleep(configure.delay)
         except:
-                print("Error")
+                print("Error, retrying login")
                 m_driver = webdriver.PhantomJS()
                 login()
                 pass
